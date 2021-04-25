@@ -1,0 +1,7 @@
+typing
+fastapi
+json
+uvicorn 
+pandas
+numpy
+multipart
