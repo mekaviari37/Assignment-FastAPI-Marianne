@@ -1,7 +1,6 @@
-typing
 fastapi
-json
-uvicorn 
+uvicorn
+requests
 pandas
+options
 numpy
-multipart
