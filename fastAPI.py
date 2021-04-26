@@ -10,7 +10,7 @@ import numpy as np
 
 app = FastAPI()
 
-@app.get('/analisa')
+@app.get('/')
 def total_positif():
     url = 'https://raw.githubusercontent.com/mekaviari37/Assignment-FastAPI-Marianne/main/data-rekap-kasus-covid19-per-kelurahan-di-provinsi-dki-jakarta-tanggal-25-maret-2020.csv'
     df = pd.read_csv(url, error_bad_lines=False)
