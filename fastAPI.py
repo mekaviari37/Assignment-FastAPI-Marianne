@@ -12,7 +12,9 @@ app = FastAPI()
 
 @app.get('/analisa')
 def total_positif():
-    df=pd.read_csv('data-rekap-kasus-covid19-per-kelurahan-di-provinsi-dki-jakarta-tanggal-25-maret-2020.csv')
+    url = 'https://raw.githubusercontent.com/mekaviari37/Assignment-FastAPI-Marianne/main/data-rekap-kasus-covid19-per-kelurahan-di-provinsi-dki-jakarta-tanggal-25-maret-2020.csv'
+    df = pd.read_csv(url, error_bad_lines=False)
+    #df=pd.read_csv('data-rekap-kasus-covid19-per-kelurahan-di-provinsi-dki-jakarta-tanggal-25-maret-2020.csv')
     df['date']='25 Maret 2020'
     df_top10=df.groupby(['date','nama_provinsi','nama_kota','nama_kecamatan'])[['positif','sembuh','meninggal']].sum().reset_index()
     df_top10['Rank'] = df_top10['positif'].rank(method='dense', ascending=False)
